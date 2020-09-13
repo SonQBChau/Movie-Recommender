@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_movify/movie_list.dart';
 import 'dart:ui' as ui;
 import 'package:rating_dialog/rating_dialog.dart';
 
@@ -11,7 +12,9 @@ class MovieDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+
       body: new Stack(fit: StackFit.expand, children: [
+
         new Image.network(
           image_url + movie['poster_path'],
           fit: BoxFit.cover,
@@ -27,6 +30,23 @@ class MovieDetail extends StatelessWidget {
             margin: const EdgeInsets.all(20.0),
             child: new Column(
               children: <Widget>[
+            new Container(
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child:
+              GestureDetector(
+                onTap:   () {
+                  Navigator.pop(context);
+                },
+                child:    Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                  size: 36.0,
+                ),
+              ),
+
+            ),
+
                 new Container(
                   alignment: Alignment.center,
                   child: new Container(
@@ -87,14 +107,14 @@ class MovieDetail extends StatelessWidget {
                                 return RatingDialog(
                                   icon:  Icon(
                                     Icons.local_play,
-                                    color: Colors.blue,
+                                    color: Colors.deepPurple,
                                     size: 100.0,
                                   ),
                                   title: "Rate this movie",
                                   description:
-                                  "Tap a star to set your rating. Add more description here if you want.",
+                                  "Tap a star to set your rating.",
                                   submitButton: "SUBMIT",
-                                  accentColor: Colors.blue, // optional
+                                  accentColor: Colors.deepPurple, // optional
                                   onSubmitPressed: (int rating) {
                                     print("onSubmitPressed: rating = $rating");
                                     // TODO: send API call
