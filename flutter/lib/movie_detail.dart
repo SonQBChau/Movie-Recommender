@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
+import 'package:rating_dialog/rating_dialog.dart';
 
 class MovieDetail extends StatelessWidget {
   final movie;
@@ -77,12 +78,37 @@ class MovieDetail extends StatelessWidget {
                       width: 150.0,
                       height: 60.0,
                       alignment: Alignment.center,
-                      child: new Text(
-                        'Rate Movie',
-                        style: new TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Arvo',
-                            fontSize: 20.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              barrierDismissible: true, // set to false if you want to force a rating
+                              builder: (context) {
+                                return RatingDialog(
+                                  icon:  Icon(
+                                    Icons.local_play,
+                                    color: Colors.blue,
+                                    size: 100.0,
+                                  ),
+                                  title: "Rate this movie",
+                                  description:
+                                  "Tap a star to set your rating. Add more description here if you want.",
+                                  submitButton: "SUBMIT",
+                                  accentColor: Colors.blue, // optional
+                                  onSubmitPressed: (int rating) {
+                                    print("onSubmitPressed: rating = $rating");
+                                    // TODO: send API call
+                                  },
+                                );
+                              });
+                        },
+                        child: new Text(
+                          'Rate Movie',
+                          style: new TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Arvo',
+                              fontSize: 20.0),
+                        ),
                       ),
                       decoration: new BoxDecoration(
                           borderRadius: new BorderRadius.circular(10.0),
