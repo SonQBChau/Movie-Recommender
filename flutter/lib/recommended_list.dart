@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:flutter_movify/movie_list.dart';
 import 'package:flutter_movify/sample_movies.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
@@ -67,7 +68,9 @@ class RecommendedListState extends State<RecommendedList> {
               alignment: Alignment.center,
               child: GestureDetector(
                 onTap: () {
-
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (c) => MovieList()),
+                          (route) => false);
                 },
                 child: new Text(
                   'Back to Menu',
