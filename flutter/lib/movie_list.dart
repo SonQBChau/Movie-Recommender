@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:flutter_movify/sample_movies.dart';
 import 'package:flutter_movify/utils.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
@@ -18,8 +19,9 @@ class MovieListState extends State<MovieList> {
   Color mainColor = const Color(0xff3C3261);
 
   void getData() async {
-    var data = await getDataUtils();
-
+    // var data = await getDataUtils();
+    // var data = await getJson();
+    var data = movieData;
     setState(() {
       movies = data;
     });

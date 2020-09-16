@@ -1,8 +1,5 @@
-final movieData = {
-  "page": 1,
-  "total_results": 10000,
-  "total_pages": 500,
-  "results": [
+final movieData =
+[
     {
       "popularity": 2967.124,
       "vote_count": 1413,
@@ -183,4 +180,4 @@ final movieData = {
     }
 
   ]
-};
+;

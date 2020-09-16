@@ -23,11 +23,11 @@ class RecommendedListState extends State<RecommendedList> {
   void getData() async {
     // var data = await getJson();
     var data = movieData;
-    print(movieData);
+    // print(movieData);
 
 
     setState(() {
-      movies = data['results'];
+      movies = data;
     });
   }
 
