@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter_movify/movie_list.dart';
-import 'package:flutter_movify/sample_movies.dart';
+import 'package:flutter_movify/top_movies_100k.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'movie_detail.dart';
@@ -22,7 +22,7 @@ class RecommendedListState extends State<RecommendedList> {
 
   void getData() async {
     // var data = await getJson();
-    var data = movieData;
+    var data = topMovies100k;
     // print(movieData);
 
 

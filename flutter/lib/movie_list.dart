@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:flutter_movify/sample_movies.dart';
+import 'package:flutter_movify/top_movies_100k.dart';
 import 'package:flutter_movify/utils.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class MovieListState extends State<MovieList> {
   void getData() async {
     // var data = await getDataUtils();
     // var data = await getJson();
-    var data = movieData;
+    var data = topMovies100k;
     setState(() {
       movies = data;
     });
@@ -83,7 +83,7 @@ class MovieTitle extends StatelessWidget {
     return new Padding(
       padding: const EdgeInsets.fromLTRB(16.0, 32, 16.0, 16.0),
       child: new Text(
-        'Top Rated',
+        'Rate a movie',
         style: new TextStyle(
             fontSize: 40.0, color: mainColor, fontWeight: FontWeight.bold, fontFamily: 'Arvo'),
         textAlign: TextAlign.left,
