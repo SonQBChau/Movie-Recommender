@@ -25,7 +25,7 @@ class RecommendedListState extends State<RecommendedList> {
     var url = 'https://notebook-schau.p.tnnl.in/get_recommended';
     Map<String, String> headers = {"Content-type": "application/json"};
     String json = jsonEncode({'movie': '$movie', 'rating': rating});
-    print(json);
+
     // make POST request
     Response response = await post(url, headers: headers, body: json);
 
@@ -33,12 +33,9 @@ class RecommendedListState extends State<RecommendedList> {
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
       // then parse the JSON.
-      print(response.body);
-      String body = response.body;
-
-      // print(body);
-      final Future str2 = getDataUtils(body);
-      return str2;
+      String bodyResponse = response.body;
+      final Future jsonResponse = getDataUtils(bodyResponse);
+      return jsonResponse;
     } else {
       // If the server did not return a 200 OK response,
       // then throw an exception.
