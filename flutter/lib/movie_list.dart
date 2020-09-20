@@ -66,12 +66,12 @@ class MovieListState extends State<MovieList> {
   }
 }
 
-Future<Map> getJson() async {
-  var apiKey = getApiKey();
-  var url = 'http://api.themoviedb.org/3/discover/movie?api_key=${apiKey}';
-  var response = await http.get(url);
-  return json.decode(response.body);
-}
+// Future<Map> getJson() async {
+//   var apiKey = getApiKey();
+//   var url = 'http://api.themoviedb.org/3/discover/movie?api_key=${apiKey}';
+//   var response = await http.get(url);
+//   return json.decode(response.body);
+// }
 
 class MovieTitle extends StatelessWidget {
   final Color mainColor;

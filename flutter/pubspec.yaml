@@ -10,6 +10,7 @@ dependencies:
   cupertino_icons: ^0.1.0
   http: any
   rating_dialog: any
+  flutter_spinkit: any
 
 dev_dependencies:
   flutter_test:
@@ -53,3 +54,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
+  assets:
+    - assets/no_image.jpg

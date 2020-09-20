@@ -3,25 +3,30 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_movify/movie_list.dart';
 import 'package:flutter_movify/recommended_list.dart';
-import 'package:http/http.dart' as http;
+
 import 'dart:ui' as ui;
 import 'package:rating_dialog/rating_dialog.dart';
 
+
+
+
 class MovieDetail extends StatelessWidget {
+
   final movie;
   var image_url = 'https://image.tmdb.org/t/p/w500/';
   MovieDetail(this.movie);
   Color mainColor = const Color(0xff3C3261);
 
-  Future<Map> getMovie() async {
-    var url = 'http://serverIp:8888/convert?angle=180';
-    var response = await http.get(url);
-    print(json.decode(response.body));
-    return json.decode(response.body);
-  }
+
+
+
 
   @override
   Widget build(BuildContext context) {
+
+
+
+
     return new Scaffold(
 
       body: new Stack(fit: StackFit.expand, children: [
@@ -128,12 +133,16 @@ class MovieDetail extends StatelessWidget {
                                   accentColor: Colors.deepPurple, // optional
                                   onSubmitPressed: (int rating) {
                                     print("onSubmitPressed: rating = $rating");
-                                    // TODO: send API call
-                                    // getMovie();
-                                    Navigator.push(context,
-                                        new MaterialPageRoute(builder: (context) {
-                                          return new RecommendedList();
-                                        }));
+
+                                      Navigator.push(context,
+                                          new MaterialPageRoute(builder: (context) {
+                                            return new RecommendedList(movie:movie['dataset_name'],rating:rating);
+                                          }));
+
+
+
+
+
                                   },
                                 );
                               });
