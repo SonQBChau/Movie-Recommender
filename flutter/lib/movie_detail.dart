@@ -1,36 +1,18 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_movify/movie_list.dart';
 import 'package:flutter_movify/recommended_list.dart';
-
 import 'dart:ui' as ui;
 import 'package:rating_dialog/rating_dialog.dart';
 
-
-
-
 class MovieDetail extends StatelessWidget {
-
   final movie;
   var image_url = 'https://image.tmdb.org/t/p/w500/';
   MovieDetail(this.movie);
   Color mainColor = const Color(0xff3C3261);
 
-
-
-
-
   @override
   Widget build(BuildContext context) {
-
-
-
-
     return new Scaffold(
-
       body: new Stack(fit: StackFit.expand, children: [
-
         new Image.network(
           image_url + movie['poster_path'],
           fit: BoxFit.cover,
@@ -46,23 +28,20 @@ class MovieDetail extends StatelessWidget {
             margin: const EdgeInsets.all(20.0),
             child: new Column(
               children: <Widget>[
-            new Container(
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child:
-              GestureDetector(
-                onTap:   () {
-                  Navigator.pop(context);
-                },
-                child:    Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
-                  size: 36.0,
+                new Container(
+                  alignment: Alignment.centerLeft,
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                      size: 36.0,
+                    ),
+                  ),
                 ),
-              ),
-
-            ),
-
                 new Container(
                   alignment: Alignment.center,
                   child: new Container(
@@ -72,40 +51,33 @@ class MovieDetail extends StatelessWidget {
                   decoration: new BoxDecoration(
                       borderRadius: new BorderRadius.circular(10.0),
                       image: new DecorationImage(
-                          image: new NetworkImage(
-                              image_url + movie['poster_path']),
+                          image: new NetworkImage(image_url + movie['poster_path']),
                           fit: BoxFit.cover),
                       boxShadow: [
                         new BoxShadow(
-                            color: Colors.black,
-                            blurRadius: 20.0,
-                            offset: new Offset(0.0, 10.0))
+                            color: Colors.black, blurRadius: 20.0, offset: new Offset(0.0, 10.0))
                       ]),
                 ),
                 new Container(
-                  margin: const EdgeInsets.symmetric(
-                      vertical: 20.0, horizontal: 0.0),
+                  margin: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 0.0),
                   child: new Row(
                     children: <Widget>[
                       new Expanded(
                           child: new Text(
                         movie['title'],
-                        style: new TextStyle(
-                            color: Colors.white,
-                            fontSize: 30.0,
-                            fontFamily: 'Arvo'),
+                        style:
+                            new TextStyle(color: Colors.white, fontSize: 30.0, fontFamily: 'Arvo'),
                       )),
                       new Text(
                         '${movie['vote_average']}/10',
-                        style: new TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.0,
-                            fontFamily: 'Arvo'),
+                        style:
+                            new TextStyle(color: Colors.white, fontSize: 20.0, fontFamily: 'Arvo'),
                       )
                     ],
                   ),
                 ),
-                new Text(movie['overview'],style: new TextStyle(color: Colors.white, fontFamily: 'Arvo')),
+                new Text(movie['overview'],
+                    style: new TextStyle(color: Colors.white, fontFamily: 'Arvo')),
                 new Padding(padding: const EdgeInsets.all(10.0)),
                 new Row(
                   children: <Widget>[
@@ -118,31 +90,25 @@ class MovieDetail extends StatelessWidget {
                         onTap: () {
                           showDialog(
                               context: context,
-                              barrierDismissible: true, // set to false if you want to force a rating
+                              barrierDismissible:
+                                  true, // set to false if you want to force a rating
                               builder: (context) {
                                 return RatingDialog(
-                                  icon:  Icon(
+                                  icon: Icon(
                                     Icons.local_play,
                                     color: Colors.deepPurple,
                                     size: 100.0,
                                   ),
                                   title: "Rate this movie",
-                                  description:
-                                  "Tap a star to set your rating.",
+                                  description: "Tap a star to set your rating.",
                                   submitButton: "SUBMIT",
                                   accentColor: Colors.deepPurple, // optional
                                   onSubmitPressed: (int rating) {
-                                    print("onSubmitPressed: rating = $rating");
-
-                                      Navigator.push(context,
-                                          new MaterialPageRoute(builder: (context) {
-                                            return new RecommendedList(movie:movie['dataset_name'],rating:rating);
-                                          }));
-
-
-
-
-
+                                    Navigator.push(context,
+                                        new MaterialPageRoute(builder: (context) {
+                                      return new RecommendedList(
+                                          movie: movie['dataset_name'], rating: rating);
+                                    }));
                                   },
                                 );
                               });
@@ -150,9 +116,7 @@ class MovieDetail extends StatelessWidget {
                         child: new Text(
                           'Rate Movie',
                           style: new TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Arvo',
-                              fontSize: 20.0),
+                              color: Colors.white, fontFamily: 'Arvo', fontSize: 20.0),
                         ),
                       ),
                       decoration: new BoxDecoration(
@@ -185,8 +149,7 @@ class MovieDetail extends StatelessWidget {
                           decoration: new BoxDecoration(
                               borderRadius: new BorderRadius.circular(10.0),
                               color: const Color(0xaa3C3261)),
-                        )
-                    ),
+                        )),
                   ],
                 )
               ],

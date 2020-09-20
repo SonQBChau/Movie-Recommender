@@ -10,7 +10,6 @@ dependencies:
   cupertino_icons: ^0.1.0
   http: any
   rating_dialog: any
-  flutter_spinkit: any
 
 dev_dependencies:
   flutter_test:

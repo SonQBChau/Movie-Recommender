@@ -1,11 +1,6 @@
-import 'dart:async';
-import 'dart:convert';
 import 'package:flutter_movify/top_movies_100k.dart';
-import 'package:flutter_movify/utils.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'movie_detail.dart';
-import 'config.dart';
 
 class MovieList extends StatefulWidget {
   @override
@@ -19,8 +14,8 @@ class MovieListState extends State<MovieList> {
   Color mainColor = const Color(0xff3C3261);
 
   void getData() async {
-    // var data = await getDataUtils();
-    // var data = await getJson();
+    // get data from 100k movie list
+    // TODO: get list of suggested movies from user's preferences eg: action, comedy....
     var data = topMovies100k;
     setState(() {
       movies = data;
@@ -66,13 +61,6 @@ class MovieListState extends State<MovieList> {
   }
 }
 
-// Future<Map> getJson() async {
-//   var apiKey = getApiKey();
-//   var url = 'http://api.themoviedb.org/3/discover/movie?api_key=${apiKey}';
-//   var response = await http.get(url);
-//   return json.decode(response.body);
-// }
-
 class MovieTitle extends StatelessWidget {
   final Color mainColor;
 
@@ -109,7 +97,6 @@ class MovieCell extends StatelessWidget {
               padding: const EdgeInsets.all(0.0),
               child: new Container(
                 margin: const EdgeInsets.all(16.0),
-//                                child: new Image.network(image_url+movies[i]['poster_path'],width: 100.0,height: 100.0),
                 child: new Container(
                   width: 70.0,
                   height: 70.0,

@@ -1,20 +1,15 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter_movify/movie_list.dart';
-import 'package:flutter_movify/top_movies_100k.dart';
 import 'package:flutter_movify/utils.dart';
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'movie_detail.dart';
-import 'config.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:http/http.dart';
 
 class RecommendedList extends StatefulWidget {
   final String movie;
   final int rating;
 
-  const RecommendedList ({Key key, this.movie, this.rating}): super(key: key);
+  const RecommendedList({Key key, this.movie, this.rating}) : super(key: key);
 
   @override
   RecommendedListState createState() {
@@ -26,17 +21,6 @@ class RecommendedListState extends State<RecommendedList> {
   var movies;
   Color mainColor = const Color(0xff3C3261);
 
-  // void getData() async {
-  //   // var data = await getJson();
-  //   var data = topMovies100k;
-  //   // print(movieData);
-  //
-  //
-  //   setState(() {
-  //     movies = data;
-  //   });
-  // }
-
   Future<List> getRecommended(movie, rating) async {
     var url = 'https://notebook-schau.p.tnnl.in/get_recommended';
     Map<String, String> headers = {"Content-type": "application/json"};
@@ -44,8 +28,6 @@ class RecommendedListState extends State<RecommendedList> {
     print(json);
     // make POST request
     Response response = await post(url, headers: headers, body: json);
-
-
 
     // check the status code for the result
     if (response.statusCode == 200) {
@@ -68,31 +50,11 @@ class RecommendedListState extends State<RecommendedList> {
   @override
   void initState() {
     super.initState();
-    // getData();
   }
-
-  // void _onLoading() {
-  //   showDialog(
-  //       barrierDismissible: false,
-  //       builder: (BuildContext context) {
-  //         return Dialog(
-  //             backgroundColor: Colors.transparent,
-  //             elevation: 0,
-  //             child: Center(
-  //               child: SpinKitWave(color: Colors.white, type: SpinKitWaveType.center),
-  //             ));
-  //       });
-  // }
-
-  // Future fetchStr() async {
-  //   await new Future.delayed(const Duration(seconds: 5), () {});
-  //   return 'Hello World';
-  // }
 
   @override
   Widget build(BuildContext context) {
     final Future movieList = getRecommended(this.widget.movie, this.widget.rating);
-
 
     return new Scaffold(
       backgroundColor: Colors.white,
@@ -103,10 +65,8 @@ class RecommendedListState extends State<RecommendedList> {
               future: movieList,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-
                   movies = snapshot.data;
-                  return
-                  new Column(
+                  return new Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       new MovieTitle(mainColor),
@@ -117,7 +77,6 @@ class RecommendedListState extends State<RecommendedList> {
                               return new FlatButton(
                                 child: new MovieCell(movies, i),
                                 padding: const EdgeInsets.all(0.0),
-
                                 color: Colors.white,
                               );
                             }),
@@ -129,20 +88,17 @@ class RecommendedListState extends State<RecommendedList> {
                         child: GestureDetector(
                           onTap: () {
                             Navigator.of(context).pushAndRemoveUntil(
-                                MaterialPageRoute(builder: (c) => MovieList()),
-                                    (route) => false);
+                                MaterialPageRoute(builder: (c) => MovieList()), (route) => false);
                           },
                           child: new Text(
                             'Back to Menu',
                             style: new TextStyle(
-                                color: Colors.white,
-                                fontFamily: 'Arvo',
-                                fontSize: 20.0),
+                                color: Colors.white, fontFamily: 'Arvo', fontSize: 20.0),
                           ),
                         ),
                         decoration: new BoxDecoration(
                             borderRadius: new BorderRadius.circular(10.0),
-                            color: const Color(0xaa3C3261)),
+                            color: mainColor),
                       )
                     ],
                   );
@@ -153,20 +109,10 @@ class RecommendedListState extends State<RecommendedList> {
                 return CircularProgressIndicator();
               },
             ),
-          )
-
-
-          ),
+          )),
     );
   }
 }
-
-// Future<Map> getJson() async {
-//   var apiKey = getApiKey();
-//   var url = 'http://api.themoviedb.org/3/discover/movie?api_key=${apiKey}';
-//   var response = await http.get(url);
-//   return json.decode(response.body);
-// }
 
 class MovieTitle extends StatelessWidget {
   final Color mainColor;
@@ -199,15 +145,13 @@ class MovieCell extends StatelessWidget {
   Widget build(BuildContext context) {
     var full_img_url;
 
-    if (movies[i]['poster_path'] != null && movies[i]['poster_path'].length != 0){
+    if (movies[i]['poster_path'] != null && movies[i]['poster_path'].length != 0) {
       full_img_url = NetworkImage(image_url + movies[i]['poster_path']);
-    }
-    else {
+    } else {
       full_img_url = AssetImage('assets/no_image.jpg');
     }
 
     return new Column(
-
       children: <Widget>[
         new Row(
           children: <Widget>[
@@ -215,19 +159,14 @@ class MovieCell extends StatelessWidget {
               padding: const EdgeInsets.all(0.0),
               child: new Container(
                 margin: const EdgeInsets.all(16.0),
-//                                child: new Image.network(image_url+movies[i]['poster_path'],width: 100.0,height: 100.0),
                 child: new Container(
                   width: 70.0,
                   height: 70.0,
-
                 ),
-
                 decoration: new BoxDecoration(
                   borderRadius: new BorderRadius.circular(10.0),
                   color: Colors.grey,
-                  image: new DecorationImage(
-                      image: full_img_url,
-                      fit: BoxFit.cover),
+                  image: new DecorationImage(image: full_img_url, fit: BoxFit.cover),
                   boxShadow: [
                     new BoxShadow(color: mainColor, blurRadius: 5.0, offset: new Offset(2.0, 5.0))
                   ],
