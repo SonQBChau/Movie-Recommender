@@ -28,8 +28,7 @@ Open the project in Android Studio or Visual Studio Code.
 2. Select device on the run target and click Run
 
 #### Optionals:
-[Postman](https://www.postman.com/)
-Make it easier to work with API
+[Postman](https://www.postman.com/): Make it easier to work with API
 
 #### Tutorials:
 [Building a movie listing app using Flutter](https://medium.com/@anujguptawork/flutter-hands-on-building-a-movie-listing-app-using-flutter-part-2-movie-detail-page-12ef9c7e95cc)
