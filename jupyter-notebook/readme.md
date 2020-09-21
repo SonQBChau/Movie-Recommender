@@ -1,4 +1,5 @@
-# Requirements (see below for details):
+
+# Requirements for setting up Jupiter Notebook:
 Anaconda, Python 3.7, TensorFlow, Pandas, NumPy, Scikit-learn, Jupyter Notebook
 
 
