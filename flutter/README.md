@@ -52,7 +52,7 @@ Current architecture:
 <img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/ss_2.jpg" >
 
 ### Future work:
-A better architecture design:
+An improved design:
 
 <img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/ss_3.jpg" >
 
