@@ -46,14 +46,18 @@ Front end app for Movie Recommendation System
 2. Open Android Studio, select device on the run target and click Run
 3. [You can view the full instructions here](https://flutter.dev/docs/deployment/android)
 
+### System Architecture:
+Current architecture:
+
+<img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/ss_2.jpg" >
+
+### Future work:
+A better architecture design:
+
+<img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/ss_3.jpg" >
+
 #### Optionals:
 [Postman](https://www.postman.com/): Make it easier to work with API
 
 #### Tutorials:
 [Building a movie listing app using Flutter](https://medium.com/@anujguptawork/flutter-hands-on-building-a-movie-listing-app-using-flutter-part-2-movie-detail-page-12ef9c7e95cc)
-
-### System Architecture:
-<img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/ss_2.jpg" >
-
-### Future work:
-<img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/ss_3.jpg" >
