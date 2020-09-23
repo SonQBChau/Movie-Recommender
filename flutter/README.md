@@ -56,8 +56,18 @@ An improved design:
 
 <img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/ss_3.jpg" >
 
+* Select preference and show movies based on that
+* For more accuracy, rate 10 movies
+* Host live server and have custom API
+* Host own database on AWS, Firebase
+* System learning over time
+* Shorter response time
+
+
 #### Optionals:
 [Postman](https://www.postman.com/): Make it easier to work with API
 
-#### Tutorials:
+#### Original Tutorials:
+
 [Building a movie listing app using Flutter](https://medium.com/@anujguptawork/flutter-hands-on-building-a-movie-listing-app-using-flutter-part-2-movie-detail-page-12ef9c7e95cc)
+
