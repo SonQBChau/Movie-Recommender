@@ -18,14 +18,32 @@ Front end app for Movie Recommendation System
 6. Type git clone, and then paste the URL you copied in Step 2.
 7. Press Enter. Your local clone will be created.
 #### Running:
-Open the project in Android Studio or Visual Studio Code.
+1. Open the project in Android Studio or Visual Studio Code.
+2. Obtain the API key from [themoviedb.org](https://developers.themoviedb.org/3/getting-started/introduction)
+3. Add a new file `config.dart` in lib folder and type in the API key:
+
+    `String getApiKey() {return 'xxxxx';}`
+4. From the terminal: Run `flutter pub get`
+
+   OR From Android Studio/IntelliJ: Click Packages get in the action ribbon at the top of pubspec.yaml
+
+   OR From VS Code: Click Get Packages located in right side of the action ribbon at the top of pubspec.yaml.
+
+   [Full instruction can be found here](https://flutter.dev/docs/development/packages-and-plugins/using-packages)
+
+5. Open Android simular or iOS simulator or connect device to the computer.
+6. Hit Run button
 
 ### Build testing:
 ##### iOS:
+1. Open the terminal and navigate to this folder, enter `flutter build ios`
+2. Use xcode and open ios/Runner folder then start the app
+3. [You can view the full instructions here](https://flutter.dev/docs/deployment/ios)
 
 ##### Android:
 1. Connect device through USB, enable developer option and file transfer
-2. Select device on the run target and click Run
+2. Open Android Studio, select device on the run target and click Run
+3. [You can view the full instructions here](https://flutter.dev/docs/deployment/android)
 
 #### Optionals:
 [Postman](https://www.postman.com/): Make it easier to work with API
