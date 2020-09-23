@@ -35,6 +35,11 @@ You can find the dataset in a separate folder.
 The full dataset can be found here:
 https://grouplens.org/datasets/movielens/
 
+### Future work:
+* System learning over time
+* Shorter run time
+* Use 1 mil dataset or 27 mil dataset
+* Improve recommendation
 
 
 
