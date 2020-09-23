@@ -60,6 +60,8 @@ An improved design:
 * For more accuracy, rate 10 movies
 * Host live server and have custom API
 * Host own database on AWS, Firebase
+* Have user account
+* Save the user rated movies on the server
 * System learning over time
 * Shorter response time
 
