@@ -24,6 +24,8 @@ Front end app for Movie Recommendation System
 3. Add a new file `config.dart` in lib folder and type in the API key:
 
     `String getApiKey() {return 'xxxxx';}`
+
+    Also replace the public URL `https://xxxx/get_recommended'`. Read the backend readme for this part.
 4. From the terminal: Run `flutter pub get`
 
    OR From Android Studio/IntelliJ: Click Packages get in the action ribbon at the top of pubspec.yaml
