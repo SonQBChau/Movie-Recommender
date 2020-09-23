@@ -1,4 +1,4 @@
-# Movie-Recommender
+# Movie Recommendation System
 A recommender system model that employs collaborative filtering to suggest relevant videos to each specific user.
 
 ## Project Abstract
