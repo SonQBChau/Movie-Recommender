@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'config.dart';
 import 'package:movie_recommender/movie_list.dart';
 import 'package:movie_recommender/utils.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class RecommendedListState extends State<RecommendedList> {
   Color mainColor = const Color(0xff3C3261);
 
   Future<List> getRecommended(movie, rating) async {
-    var url = 'https://notebook-schau.p.tnnl.in/get_recommended';
+    var url = getPublicURL();
     Map<String, String> headers = {"Content-type": "application/json"};
     String json = jsonEncode({'movie': '$movie', 'rating': rating});
 
