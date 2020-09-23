@@ -71,7 +71,4 @@ An improved design:
 #### Optionals:
 [Postman](https://www.postman.com/): Make it easier to work with API
 
-#### Original Tutorials:
-
-[Building a movie listing app using Flutter](https://medium.com/@anujguptawork/flutter-hands-on-building-a-movie-listing-app-using-flutter-part-2-movie-detail-page-12ef9c7e95cc)
 

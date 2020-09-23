@@ -35,7 +35,6 @@ You can find the dataset in a separate folder.
 The full dataset can be found here:
 https://grouplens.org/datasets/movielens/
 
-#### Tutorials:
 
 
 
