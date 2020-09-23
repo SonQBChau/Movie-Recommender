@@ -24,7 +24,9 @@ Open the project by launching Jupyter Notebook within the new environment using 
 
 #### Enable localhost API:
 1. Install kernel_gateway. [Read the tutorial](https://ndres.me/post/jupyter-notebook-rest-api/)
-2. Get a public URL so the app can access. [Public URL for localhost](https://tunnelin.com/)
+2. Run `jupyter kernelgateway --api='kernel_gateway.notebook_http' --seed_uri='project1v1.ipynb' --port 9090`
+3. Get a public URL so the app can access from [Public URL for localhost](https://tunnelin.com/)
+4. Change the public URL `https://xxxx/get_recommended'`. Refer to the frontend readme for this part.
 
 #### Dataset:
 
