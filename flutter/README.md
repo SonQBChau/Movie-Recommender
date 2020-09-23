@@ -7,6 +7,7 @@ Front end app for Movie Recommendation System
 
 #### Prerequisites
 * [Flutter](https://flutter.dev) - Google Flutter framework.
+* [Android Studio](https://developer.android.com/studio) or [VSCode](https://code.visualstudio.com/)
 #### Installing
 * [How to install](https://flutter.dev/docs/get-started/install)
 #### Cloning a repository:
@@ -51,5 +52,8 @@ Front end app for Movie Recommendation System
 #### Tutorials:
 [Building a movie listing app using Flutter](https://medium.com/@anujguptawork/flutter-hands-on-building-a-movie-listing-app-using-flutter-part-2-movie-detail-page-12ef9c7e95cc)
 
+### System Architecture:
+<img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/ss_2.jpg" >
 
 ### Future work:
+<img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/ss_3.jpg" >
