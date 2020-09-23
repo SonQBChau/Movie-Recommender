@@ -6,7 +6,7 @@ A recommender system model that employs collaborative filtering to suggest relev
 As video content libraries grow bigger by the day, it is becoming difficult for viewers to find programming that appeals to them. A great solution is to recommend content for users to watch, based on their individual taste, without them having to search for it. This requires a good recommendation system that studies the viewing habit patterns of similar users.
 With that in mind, we have set out to create a recommender system model that employs collaborative filtering to suggest relevant videos to each specific user.
 
-<img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/ss_4.jpg" >
+<img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/ss_4.png" >
 
 The picture attached above shows an easy to understand visualization of how the recommender system will work. Users with similar taste will be grouped together, so if one user in a group watches a movie that another user in the same group hasn’t watched, the system will recommend said movie to the user (that hasn’t watched it) on the basis that they will probably like it, given that they have similar taste to the former user.
 
