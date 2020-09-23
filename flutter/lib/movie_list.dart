@@ -1,4 +1,4 @@
-import 'package:flutter_movify/top_movies_100k.dart';
+import 'package:movie_recommender/top_movies_100k.dart';
 import 'package:flutter/material.dart';
 import 'movie_detail.dart';
 
@@ -46,7 +46,8 @@ class MovieListState extends State<MovieList> {
                       child: new MovieCell(movies, i),
                       padding: const EdgeInsets.all(0.0),
                       onPressed: () {
-                        Navigator.push(context, new MaterialPageRoute(builder: (context) {
+                        Navigator.push(context,
+                            new MaterialPageRoute(builder: (context) {
                           return new MovieDetail(movies[i]);
                         }));
                       },
@@ -73,7 +74,10 @@ class MovieTitle extends StatelessWidget {
       child: new Text(
         'Rate a movie',
         style: new TextStyle(
-            fontSize: 40.0, color: mainColor, fontWeight: FontWeight.bold, fontFamily: 'Arvo'),
+            fontSize: 40.0,
+            color: mainColor,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Arvo'),
         textAlign: TextAlign.left,
       ),
     );
@@ -105,10 +109,14 @@ class MovieCell extends StatelessWidget {
                   borderRadius: new BorderRadius.circular(10.0),
                   color: Colors.grey,
                   image: new DecorationImage(
-                      image: new NetworkImage(image_url + movies[i]['poster_path']),
+                      image: new NetworkImage(
+                          image_url + movies[i]['poster_path']),
                       fit: BoxFit.cover),
                   boxShadow: [
-                    new BoxShadow(color: mainColor, blurRadius: 5.0, offset: new Offset(2.0, 5.0))
+                    new BoxShadow(
+                        color: mainColor,
+                        blurRadius: 5.0,
+                        offset: new Offset(2.0, 5.0))
                   ],
                 ),
               ),
@@ -130,7 +138,8 @@ class MovieCell extends StatelessWidget {
                   new Text(
                     movies[i]['overview'],
                     maxLines: 3,
-                    style: new TextStyle(color: const Color(0xff8785A4), fontFamily: 'Arvo'),
+                    style: new TextStyle(
+                        color: const Color(0xff8785A4), fontFamily: 'Arvo'),
                   )
                 ],
                 crossAxisAlignment: CrossAxisAlignment.start,

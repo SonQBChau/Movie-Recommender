@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_movify/recommended_list.dart';
+import 'package:movie_recommender/recommended_list.dart';
 import 'dart:ui' as ui;
 import 'package:rating_dialog/rating_dialog.dart';
 
@@ -51,33 +51,42 @@ class MovieDetail extends StatelessWidget {
                   decoration: new BoxDecoration(
                       borderRadius: new BorderRadius.circular(10.0),
                       image: new DecorationImage(
-                          image: new NetworkImage(image_url + movie['poster_path']),
+                          image: new NetworkImage(
+                              image_url + movie['poster_path']),
                           fit: BoxFit.cover),
                       boxShadow: [
                         new BoxShadow(
-                            color: Colors.black, blurRadius: 20.0, offset: new Offset(0.0, 10.0))
+                            color: Colors.black,
+                            blurRadius: 20.0,
+                            offset: new Offset(0.0, 10.0))
                       ]),
                 ),
                 new Container(
-                  margin: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 0.0),
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 20.0, horizontal: 0.0),
                   child: new Row(
                     children: <Widget>[
                       new Expanded(
                           child: new Text(
                         movie['title'],
-                        style:
-                            new TextStyle(color: Colors.white, fontSize: 30.0, fontFamily: 'Arvo'),
+                        style: new TextStyle(
+                            color: Colors.white,
+                            fontSize: 30.0,
+                            fontFamily: 'Arvo'),
                       )),
                       new Text(
                         '${movie['vote_average']}/10',
-                        style:
-                            new TextStyle(color: Colors.white, fontSize: 20.0, fontFamily: 'Arvo'),
+                        style: new TextStyle(
+                            color: Colors.white,
+                            fontSize: 20.0,
+                            fontFamily: 'Arvo'),
                       )
                     ],
                   ),
                 ),
                 new Text(movie['overview'],
-                    style: new TextStyle(color: Colors.white, fontFamily: 'Arvo')),
+                    style:
+                        new TextStyle(color: Colors.white, fontFamily: 'Arvo')),
                 new Padding(padding: const EdgeInsets.all(10.0)),
                 new Row(
                   children: <Widget>[
@@ -105,9 +114,11 @@ class MovieDetail extends StatelessWidget {
                                   accentColor: Colors.deepPurple, // optional
                                   onSubmitPressed: (int rating) {
                                     Navigator.push(context,
-                                        new MaterialPageRoute(builder: (context) {
+                                        new MaterialPageRoute(
+                                            builder: (context) {
                                       return new RecommendedList(
-                                          movie: movie['dataset_name'], rating: rating);
+                                          movie: movie['dataset_name'],
+                                          rating: rating);
                                     }));
                                   },
                                 );
@@ -116,7 +127,9 @@ class MovieDetail extends StatelessWidget {
                         child: new Text(
                           'Rate Movie',
                           style: new TextStyle(
-                              color: Colors.white, fontFamily: 'Arvo', fontSize: 20.0),
+                              color: Colors.white,
+                              fontFamily: 'Arvo',
+                              fontSize: 20.0),
                         ),
                       ),
                       decoration: new BoxDecoration(

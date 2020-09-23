@@ -1,5 +1,6 @@
-name: flutter_movify
-description: A new Flutter application.
+name: movie_recommender
+description: A movie recommender system
+version: 1.0.0+1
 
 dependencies:
   flutter:

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:flutter_movify/movie_list.dart';
-import 'package:flutter_movify/utils.dart';
+import 'package:movie_recommender/movie_list.dart';
+import 'package:movie_recommender/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
@@ -51,7 +51,8 @@ class RecommendedListState extends State<RecommendedList> {
 
   @override
   Widget build(BuildContext context) {
-    final Future movieList = getRecommended(this.widget.movie, this.widget.rating);
+    final Future movieList =
+        getRecommended(this.widget.movie, this.widget.rating);
 
     return new Scaffold(
       backgroundColor: Colors.white,
@@ -85,12 +86,15 @@ class RecommendedListState extends State<RecommendedList> {
                         child: GestureDetector(
                           onTap: () {
                             Navigator.of(context).pushAndRemoveUntil(
-                                MaterialPageRoute(builder: (c) => MovieList()), (route) => false);
+                                MaterialPageRoute(builder: (c) => MovieList()),
+                                (route) => false);
                           },
                           child: new Text(
                             'Back to Menu',
                             style: new TextStyle(
-                                color: Colors.white, fontFamily: 'Arvo', fontSize: 20.0),
+                                color: Colors.white,
+                                fontFamily: 'Arvo',
+                                fontSize: 20.0),
                           ),
                         ),
                         decoration: new BoxDecoration(
@@ -123,7 +127,10 @@ class MovieTitle extends StatelessWidget {
       child: new Text(
         'Recommended',
         style: new TextStyle(
-            fontSize: 40.0, color: mainColor, fontWeight: FontWeight.bold, fontFamily: 'Arvo'),
+            fontSize: 40.0,
+            color: mainColor,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Arvo'),
         textAlign: TextAlign.left,
       ),
     );
@@ -142,7 +149,8 @@ class MovieCell extends StatelessWidget {
   Widget build(BuildContext context) {
     var full_img_url;
 
-    if (movies[i]['poster_path'] != null && movies[i]['poster_path'].length != 0) {
+    if (movies[i]['poster_path'] != null &&
+        movies[i]['poster_path'].length != 0) {
       full_img_url = NetworkImage(image_url + movies[i]['poster_path']);
     } else {
       full_img_url = AssetImage('assets/no_image.jpg');
@@ -163,9 +171,13 @@ class MovieCell extends StatelessWidget {
                 decoration: new BoxDecoration(
                   borderRadius: new BorderRadius.circular(10.0),
                   color: Colors.grey,
-                  image: new DecorationImage(image: full_img_url, fit: BoxFit.cover),
+                  image: new DecorationImage(
+                      image: full_img_url, fit: BoxFit.cover),
                   boxShadow: [
-                    new BoxShadow(color: mainColor, blurRadius: 5.0, offset: new Offset(2.0, 5.0))
+                    new BoxShadow(
+                        color: mainColor,
+                        blurRadius: 5.0,
+                        offset: new Offset(2.0, 5.0))
                   ],
                 ),
               ),
@@ -187,7 +199,8 @@ class MovieCell extends StatelessWidget {
                   new Text(
                     movies[i]['overview'],
                     maxLines: 3,
-                    style: new TextStyle(color: const Color(0xff8785A4), fontFamily: 'Arvo'),
+                    style: new TextStyle(
+                        color: const Color(0xff8785A4), fontFamily: 'Arvo'),
                   )
                 ],
                 crossAxisAlignment: CrossAxisAlignment.start,
