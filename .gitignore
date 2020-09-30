@@ -19,3 +19,9 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
+jupyter-notebook/big_data/README.txt
+jupyter-notebook/.ipynb_checkpoints/project1v1mil-checkpoint.ipynb
+jupyter-notebook/big_data/movies.csv
+jupyter-notebook/big_data/ratings.csv
+jupyter-notebook/big_data/users.csv
+jupyter-notebook/project1v1mil.ipynb
