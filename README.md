@@ -25,3 +25,5 @@ Because our model is trying to learn the structure of the data in order to sort 
 A good visualization is shown below. Each row corresponds to a unique user, each column corresponds to a unique movie, and each rating in the matrix records a users rating of the movie.
 
 The model then takes the filled out matrix and groups the user into a category with other users based on similar preferences, it will use these groups to determine what to recommend to our users. This is known as collaborative filtering.
+
+this is new information
