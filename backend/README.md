@@ -1,4 +1,4 @@
-# CSE5300_movie_recommendation
+# Abstract
 A movie recommendation system that uses both
 ALS and SVD based recommendation algorithms. Using Flask for API endpoint, no front-end implemented yet.
 
