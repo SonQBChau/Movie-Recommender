@@ -1,0 +1,4 @@
+/tables/*
+/.vscode/*
+/ALS_Model/*
+/__pycache__/*
