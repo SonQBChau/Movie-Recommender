@@ -10,8 +10,7 @@ https://grouplens.org/datasets/movielens/
 
 ## Architecture for movie recommendation system:
 
-
-<img src="https://github.com/SonQBChau/CSE5300_movie_recommendation/blob/main/architecture.jpg" >
+![architecture](architecture.jpg)
 
 ## Installation:
 Follow this guide to install Spark:
