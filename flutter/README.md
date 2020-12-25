@@ -3,6 +3,9 @@ Front end app for Movie Recommendation System
 
 <img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/ss.jpg" >
 
+
+<img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/movie.gif" >
+
 ### Getting Started
 
 #### Prerequisites
