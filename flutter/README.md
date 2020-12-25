@@ -4,8 +4,6 @@ Front end app for Movie Recommendation System
 <img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/ss.jpg" >
 
 
-<img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/movie.gif" >
-
 ### Getting Started
 
 #### Prerequisites
@@ -75,3 +73,6 @@ An improved design:
 [Postman](https://www.postman.com/): Make it easier to work with API
 
 
+
+
+<img src="https://github.com/SonQBChau/movie-recommender/blob/master/flutter/movie.gif" >
